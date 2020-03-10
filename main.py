@@ -1,27 +1,27 @@
 class SongTitleFinder:
     def __init__(self, input, corpus):
-        self.input = input.upper()
+        self.input = input.upper().split(" ")
         self.corpus = set()
         for key in corpus:
             self.corpus.add(key.upper())
-        # Converted input will come from convert_input()
-        self.converted_input = None
+        self.output = []
 
-    def convert_input(self):
+    def recursive_search(self, current_index=0, current_combo=None, all_combinations=None):
         """
-        Convert string into array
+        Perform a nested recursive search for each combinaiton of words in input
         """
+        if all_combinations == None:
+            all_combinations = []
+        if current_combo == None:
+            current_combo = []
+        # Exit condition: no more items to iterate
+        # Iterate through each first word in remaining array
+            # Add word to current combo
+            # Add combo to all combos
+            # Recursively iterate through each remaining word in remaining array
 
-        # for letter
-        pass
 
-    def recursive_search(self):
-        """
-        """
-        pass
-
-
-sample_input1 = "Hey ma, I though that I told you I like the way you move"
+sample_input1 = "Hey ma I though that I told you I like the way you move"
 sample_song_dict1 = {"HEY MA", "I Like the way YOU move",
                      "happy days", "Is a good show"}
 test1 = SongTitleFinder(sample_input1, sample_song_dict1)
